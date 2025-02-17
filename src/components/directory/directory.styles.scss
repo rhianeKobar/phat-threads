@@ -3,4 +3,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+	font-family: 'SuperEasy';
+}
+
+@font-face {
+  font-family: "SuperEasy";   /*Can be any text*/
+  src: local("SuperEasy"),
+    url("../../fonts/SuperEasy-ZVAr3.ttf") format("truetype");
 }
