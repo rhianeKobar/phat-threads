@@ -1,3 +1,4 @@
+import './sign-up-form.styles.scss';
 import { useState } from "react";
 import { createAuthUserWithEmailAndPassword, signInWithUserEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 
