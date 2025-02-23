@@ -41,11 +41,10 @@ export const createUserDocumentFromAuth = async(userAuth, additionalInformation=
 		}
 	}
 	return userDocRef;	
-	}
+}
 
-	export const createAuthUserWithEmailAndPassword = async(email, password) => {
-		
-		if (!email || !password || !auth) return;
+export const createAuthUserWithEmailAndPassword = async (email, password) => {
+	if (!email || !password || !auth) return;
 
-		return await createUserWithEmailAndPassword(auth, email, password);
-	};
+	return await createUserWithEmailAndPassword(auth, email, password);
+};
