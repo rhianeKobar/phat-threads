@@ -5,8 +5,7 @@ import Button from "../button/button.component";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
-  signInWithUserEmailAndPassword,
-	auth
+  signInWithUserEmailAndPassword
 } from "../../utils/firebase/firebase.utils";
 import { useNavigate } from 'react-router-dom';
 
@@ -18,11 +17,10 @@ const SignInForm = () => {
     email: "",
     password: "",
   };
-
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
-
-  const resetFormFields = () => {
+ 
+	const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
@@ -38,10 +36,11 @@ const SignInForm = () => {
     if (!email || !password) {
       alert("Please fill in all fields!");
       return;
-    }else if(auth.currentUser){
-			alert("Someone is already signed in!");
-			return;
-		}
+    }
+		// else if(auth.currentUser){
+		// 	alert("Someone is already signed in!");
+		// 	return;
+		// }
 
     try {
       const { user } = await signInWithUserEmailAndPassword(
