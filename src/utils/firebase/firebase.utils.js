@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "./firebase.config";
-import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signOut, onAuthStateChanged, updateProfile, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 const firebaseApp = initializeApp(firebaseConfig);
@@ -48,3 +48,16 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
 
 	return await createUserWithEmailAndPassword(auth, email, password);
 };
+
+export const updateUserProfile = async (displayName, photoURL) => {
+  updateProfile(auth.currentUser, {
+    displayName: displayName,
+    photoURL: photoURL,
+  }).catch((error) => {
+    alert(error.message);
+  });
+};
+
+export const signOutUser = async() => await signOut(auth);
+
+export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback)
