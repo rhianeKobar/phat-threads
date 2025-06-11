@@ -1,4 +1,4 @@
-.category-container {
+.directory-item-container {
   min-width: 30%;
   height: 240px;
   flex: 1 1 auto;
@@ -12,12 +12,12 @@
   &:hover {
     cursor: pointer;
 
-    & .category-background-image {
+    & .directory-item-background-image {
       transform: scale(1.1);
       transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
 
-    & .category-body-container {
+    & .directory-item-body-container {
       opacity: 0.9;
     }
   }
@@ -34,14 +34,14 @@
     margin-left: 7.5px;
   }
 
-  .category-background-image {
+  .directory-item-background-image {
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
   }
 
-  .category-body-container {
+  .directory-item-body {
     height: 90px;
     padding: 0 25px;
     display: flex;
